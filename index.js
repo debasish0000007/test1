@@ -1,33 +1,46 @@
-var Days;
-(function (Days) {
-    Days[Days["sunday"] = 0] = "sunday";
-    Days[Days["monday"] = 1] = "monday";
-    Days[Days["tuesday"] = 2] = "tuesday";
-    Days[Days["wednesday"] = 3] = "wednesday";
-    Days[Days["thursday"] = 4] = "thursday";
-    Days[Days["friday"] = 5] = "friday";
-    Days[Days["saturday"] = 6] = "saturday";
-})(Days || (Days = {}));
-var d = Days.sunday;
+// simple/Basic Data types
+//number
+var a = 10; // automatically a data type will be number because type inference
+var b = 20; // here i am explicitly mentioning the type==>Type annotation
+//All methods of js can be included because ts is superset of js
+// string
+var str1 = "john"; // type inference
+var str2 = "hero"; // type annotation
+// boolean
+var check = (a > 5); //type inference
+var check2 = true;
+// except in one case called any
+var some;
+some = "john";
+some = 10;
+// use any only when it is extremely necessary
+//number|string means both number and string are possible outcomes
+//array- collection of similar data types
+var arr = [1, 2, 3, 4];
+var arr1 = ["john", 1, 2];
+var arr2 = ["a", "b", "c"];
+var arr3 = ["an", 2, "the"];
+// tuples
+var tp = ["raj", 23]; // type inference of tuple won't work here
+// enums - enumerated values - a default number is generated for set of finite values
+var Day;
+(function (Day) {
+    Day[Day["sunday"] = 0] = "sunday";
+    Day[Day["monday"] = 1] = "monday";
+    Day[Day["tuesday"] = 2] = "tuesday";
+    Day[Day["wednesday"] = 3] = "wednesday";
+    Day[Day["thursday"] = 4] = "thursday";
+    Day[Day["friday"] = 5] = "friday";
+    Day[Day["saturday"] = 6] = "saturday";
+})(Day || (Day = {}));
+var d = Day.sunday;
 console.log(d); // 0
-console.log(Days[d]); //sunday
+console.log(Day[d]); //sunday
 // type Assertions- type casting
 // any or some union
 var v1;
 v1 = 10;
 console.log(v1.toFixed());
-// DOM 
-var anchor = document.querySelector('a');
-console.log(anchor);
-var person = {
-    name: "john",
-    age: 20
-};
-var person5 = {
-    name: "",
-    age: 50,
-    height: 5
-};
 var add = function (a, b, c) {
     if (c === void 0) { c = 20; }
     return a + b + c;
@@ -37,11 +50,11 @@ var ar = [2, 3, 5];
 // DRY- Don't repeat yourself
 var a1 = add(2, 2, 3);
 // functions async- promises
-function displayValue1(c) {
+function displayValue(c) {
     throw new Error();
 }
 var c = add(2, 5);
-displayValue1(c);
+displayValue(c);
 // classes- classes are used encapsulation --binding
 // create instances 
 // class Human
